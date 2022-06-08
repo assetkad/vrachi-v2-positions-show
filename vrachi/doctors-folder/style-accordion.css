@@ -1,0 +1,60 @@
+.accordion {
+    --accordion-time: 0.3s;
+}
+
+.content {
+    margin: 0 auto;
+}
+
+.accordion__control {
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #c1c1c1;
+    -webkit-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+
+.accordion__control:hover {
+    border-color: #0677d7;
+}
+
+.accordion__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    will-change: max-height;
+    -webkit-transition: all var(--accordion-time) ease-out;
+    -o-transition: all var(--accordion-time) ease-out;
+    transition: all var(--accordion-time) ease-out;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+}
+
+.accordion__title {
+    font-weight: bold;
+    font-size: 20px;
+	color: rgb(60, 64, 67);
+}
+
+.accordion__icon {
+    -webkit-transition: -webkit-transform var(--accordion-time) ease-out;
+    transition: -webkit-transform var(--accordion-time) ease-out;
+    -o-transition: transform var(--accordion-time) ease-out;
+    transition: transform var(--accordion-time) ease-out;
+    transition: transform var(--accordion-time) ease-out, -webkit-transform var(--accordion-time) ease-out;
+}
+
+.is-open .accordion__icon {
+    -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+
+.is-open .accordion__content {
+    opacity: 1;
+    padding: 20px;
+}
