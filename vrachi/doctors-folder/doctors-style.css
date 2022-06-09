@@ -61,6 +61,7 @@
     font-size: 20px;
     font-weight: 700;
     color: rgb(60, 64, 67);
+    line-height: 20px;
 }
 
 .card__person--info {
@@ -85,12 +86,31 @@
 }
 
 .card__line {
-    position: absolute;
+    /* position: absolute; */
+    position: relative;
     height: 1px;
     width: 100%;
     background-color: rgb(216, 213, 213);
-    bottom: 45px;
-    left: 0;
+    /* bottom: 45px;
+    left: 0; */
+}
+
+.card__line::before{
+    content: '';
+    position: absolute;
+    left: -13px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(216, 213, 213);
+}
+
+.card__line::after{
+    content: '';
+    position: absolute;
+    right: -13px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(216, 213, 213);
 }
 
 .card__bottom__conatiner {
@@ -108,14 +128,16 @@
     padding-right: 5px;
 }
 
-.card__location--text{
-    color: #000;
+.card__bottom__conatiner h5 {
+    text-transform: uppercase;
+    color: rgb(60, 64, 67);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
 }
 
-.card__bottom__conatiner h5 {
-    font-size: 11px;
-    font-weight: 400;
-    margin-bottom: 0;
+.card__location--text{
+    color: #000;
 }
 
 @media (max-width: 668px) {
